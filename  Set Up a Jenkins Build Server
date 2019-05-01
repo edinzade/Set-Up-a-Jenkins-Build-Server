@@ -1,0 +1,37 @@
+# Set Up a Jenkins Build Server
+
+# You can use Amazon Elastic Compute Cloud (Amazon EC2) to deploy a Jenkins application on AWS in a matter of minutes.
+
+Step 1
+To prepare for this tutorial, you will need an AWS account, an AWS Identity and Access Management (IAM) user name and password, an Amazon EC2 key pair, and a configured Virtual Private Cloud (VPC). Detailed instructions can be found in Setting Up to Host a Web App on AWS.1
+
+
+Step 2: Launch an EC2 Instance
+
+Create a Security Group for Your Amazon EC2
+Instance A security group acts as a firewall that controls the traffic allowed to reach one or more EC2 instances. 
+1.Allow inbound HTTP access from anywhere
+2.Allow inbound SSH traffic from your computer's public IP address so
+that you can connect to your instance
+
+# Launch Your EC2 Instance
+ 
+ Step 3: Install and Configure Jenkins 
+
+ Before you connect to your instance, get the public DNS name of the instance using the Amazon EC2 console. Select the instance and locate Public DNS on the Description tab.
+ To Connect to Your Instance from Linux or Mac OS X Using SSH
+1. Use the ssh command to connect to the instance. You will specify the private key (.pem) file and ec2-user@public_dns_name.
+
+Download and Install Jenkins
+ sudo yum update –y
+
+ sudo wget -O
+/etc/yum.repos.d/jenkins.repo http://pkg.jenkins-
+ci.org/redhat/jenkins.repo
+sudo rpm --import
+https://pkg.jenkins.io/redhat/jenkins.io.key
+sudo yum install jenkins -y
+sudo service jenkins start
+Configure Jenkins
+
+
